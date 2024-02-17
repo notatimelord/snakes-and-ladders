@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="myStyle.css">
+<script src="initBoard.js"></script>
+<script src="game.js"></script>
+<script src="gameWithComputer.js"></script>
+</head>
+<div class = "background">
+<body onload=initBoard()>
+
+<table  id="mainTable">
+</table>
+<script>
+    // Call the setDice function when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        InitializeDice();
+    });
+</script>
+<div class="buttonContainer">
+    <button class="newGame" onclick="newGame()">New Game</button>
+    <button class="AI_game" id="AI" onclick="startGame(1)" hidden>Play with AI</button>
+    <button class="Human_game" id="human" onclick="startGame(0)" hidden>Play with a friend</button>
+</div>
+
+    <div class="info-container">
+        <div class="info-box">
+            <h2>Information Box</h2>
+        </div>
+        <div class="info-box-text">
+            <p id="diceResulttext"></p>
+        </div>
+        <button type="button" id="rolldicebutton" onclick="rollDice()">Roll Dice</button>
+        
+        <div class="dice-container">
+            <div class="dice-number" data-number="1" id="num1">1</div>
+            <div class="dice-number" data-number="2" id="num2">2</div>
+            <div class="dice-number" data-number="3" id="num3">3</div>
+            <div class="dice-number" data-number="4" id="num4">4</div>
+            <div class="dice-number" data-number="5" id="num5">5</div>
+            <div class="dice-number" data-number="6" id="num6">6</div>
+        </div>
+
+        <input type="text" id="diceResult" readonly>
+        <button onclick="cleanHistory()">Clean History</button>
+    </div>
+    <button class="sound_button" onclick="toggleSound()">Sound</button>
+    <audio id="snakeSound">
+        <source src="halloween.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+        
+</div>
+</html>
+
+
